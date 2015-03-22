@@ -44,5 +44,7 @@ Once the 2 datasets train & test have been created and tidied, the following act
 
 # A note on respecting the instruction order and guidelines
 In order to optimize execution and memory space, train & test data are cleaned and filtered before being merged together (step 1 in the instructions).
+
 This includes filtering mean & std data (step 2), using descriptive activity names from the activity_labels.txt (step 3), and labeling the variable appropriately(step 4)
+
 Step 5 is then executed at the end using the reshape2 package.
