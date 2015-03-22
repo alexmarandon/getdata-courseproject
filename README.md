@@ -25,6 +25,7 @@ The script requires the dplyr and the reshape2 packages. You can install them us
 # How the Script Works
 - The script will first check if the dataset.zip file is present. If not, it will download it from the following location: [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 - It will then check for the « UCI HAR Dataset » directory in the current folder. If not present, it will unzip the dataset.zip file in it.
+
 For each of the train and test data set, the script will perform:
 - load the feature file X_test/train.txt file
 - filter the mean/standard deviation related variables using the grep(« mean|std ») function. This will extract the 79 mean(), std() and meanFreq() variables.
@@ -34,11 +35,12 @@ For each of the train and test data set, the script will perform:
 - load the subject_test/train.txt data
 - assemble the 3 data sets using the cbind function
 - the dataset is also properly labeled using the features names with a little bit of cleanup for readability purposes.
+
 Once the 2 datasets train & test have been created and tidied, the following actions are then performed:
-assemble the train and test dataset using the rbind() function
-create the tidyDS1.txt file
-use the melt / dcast functions from the reshape2 package to aggregate the features for each activity / subject pair using the mean function.
-create the tidyDS2.txt file
+- assemble the train and test dataset using the rbind() function
+- create the tidyDS1.txt file
+- use the melt / dcast functions from the reshape2 package to aggregate the features for each activity / subject pair using the mean function.
+- create the tidyDS2.txt file
 
 # A note on respecting the instruction order and guidelines
 In order to optimize execution and memory space, train & test data are cleaned and filtered before being merged together (step 1 in the instructions).
